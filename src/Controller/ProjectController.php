@@ -74,10 +74,10 @@ class ProjectController extends AbstractController
                     ->setParameter(1,$status);
                 $result = $qb->getQuery()->getResult();
                 foreach ($result as $project) {
-                    $data [] = [$this->HelperService->prepareProjectData($project)];
+                    array_push($data,$this->HelperService->prepareProjectData($project) );
                 }
             } else {
-                return new JsonResponse(['code' => 400, 'message' => 'Not found']);
+                return new JsonResponse(['code' => 400, 'message' => 'Invalid input']);
             }
         }
         if (!empty($data)) {
