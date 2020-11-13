@@ -1,7 +1,4 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
-reward:
-  path: /reward
-  controller: 'App\Controller\RewardController::addReward'
-  methods: POST
+
